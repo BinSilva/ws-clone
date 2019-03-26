@@ -52,7 +52,10 @@ class formLogin extends Component {
                         <Text style={{ color: '#ff0000', fontSize: 18 }}>
                             {this.props.erroLogin}
                         </Text>
-                        <TouchableHighlight onPress={() => Actions.formCadastro()}>
+                        <TouchableHighlight 
+                            underlayColor={'#144D44'} 
+                            onPress={() => Actions.formCadastro()}
+                        >
                             <Text style={{ fontSize: 20, color: '#fff' }}>
                                 Ainda não tem cadastro? Cadastre-se
                             </Text>
