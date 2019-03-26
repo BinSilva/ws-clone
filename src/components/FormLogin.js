@@ -19,11 +19,7 @@ class formLogin extends Component {
             );
         }
         return (
-            <Button 
-                title="Acessar" 
-                color='#115E54' 
-                onPress={() => this._autenticarUsuario()}
-            />
+            <Button title="Acessar" color='#115E54' onPress={() => this._autenticarUsuario()} />
         );
     }
     
@@ -52,13 +48,13 @@ class formLogin extends Component {
                         <Text style={{ color: '#ff0000', fontSize: 18 }}>
                             {this.props.erroLogin}
                         </Text>
-                        <TouchableHighlight 
-                            underlayColor={'#144D44'} 
-                            onPress={() => Actions.formCadastro()}
-                        >
-                            <Text style={{ fontSize: 20, color: '#fff' }}>
-                                Ainda não tem cadastro? Cadastre-se
-                            </Text>
+                        <TouchableHighlight onPress={() => Actions.formCadastro()}>
+                            <Text 
+                                style={{ 
+                                fontSize: 20, 
+                                color: '#fff' 
+                                }}
+                            >Ainda não tem cadastro? Cadastre-se</Text>
                         </TouchableHighlight>
                     </View>
                     <View style={{ flex: 2 }}>

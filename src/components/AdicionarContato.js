@@ -6,7 +6,7 @@ import { modificaAdicionaContatoEmail, adicionaContato } from '../actions/AppAct
 class AdicionarContato extends Component {
 
     renderAdicionarContato() {
-        if (!this.props.cadastro_resultado_inclusao) {
+        if(!this.props.cadastro_resultado_inclusao) {
             return (
                 
                 <View style={{ flex: 1 }}>
@@ -23,29 +23,30 @@ class AdicionarContato extends Component {
                         <Button 
                             title="Adicionar" 
                             color="#115E54" 
-                            onPress={() => this.props.adicionaContato(this.props.adiciona_contato_email)} 
+                            onPress={() => this.props.adicionaContato(this.props.adiciona_contato_email) } 
                         />
                         <Text style={{ color: '#ff0000', fontSize: 20 }}>
                             {this.props.cadastro_resultado_txt_erro}
                         </Text>
                     </View>
                 </View>
-            );
-        } 
+            )
+        } else {
             return (
                 <View>
                     <Text style={{ fontSize: 20 }}>
                         Cadastro realizado com sucesso!
                     </Text>
                 </View>
-            );
+            )
+        }
     }
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', padding: 20 }}>
                 { this.renderAdicionarContato() }
             </View>
-        );
+        )
     }
 }
 
@@ -55,6 +56,6 @@ const mapStateToProps = state => (
         cadastro_resultado_txt_erro: state.AppReducer.cadastro_resultado_txt_erro,
         cadastro_resultado_inclusao: state.AppReducer.cadastro_resultado_inclusao
     }
-);
+)
 
 export default connect(mapStateToProps, { modificaAdicionaContatoEmail, adicionaContato })(AdicionarContato);

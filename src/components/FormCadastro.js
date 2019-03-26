@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Button, Text, ImageBackground, ActivityIndicator } from 'react-native';
+import { View, TextInput, Button, ImageBackground, Text, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { 
     modificaEmail, 
@@ -23,11 +23,7 @@ class formCadastro extends Component {
             );
         }
         return (
-            <Button 
-                title="Cadastrar" 
-                color="#115E54" 
-                onPress={() => this._cadastraUsuario()}
-            />
+            <Button title="Cadastrar" color="#115E54" onPress={() => this._cadastraUsuario()} />
         );
     }
 
@@ -59,7 +55,12 @@ class formCadastro extends Component {
                             onChangeText={texto => this.props.modificaSenha(texto)} 
                         />
 
-                        <Text style={{ color: '#ff0000', fontSize: 18 }}>{this.props.erroCadastro}</Text>
+                        <Text 
+                            style={{ 
+                            color: '#ff0000', 
+                            fontSize: 18 
+                        }}
+                        >{this.props.erroCadastro}</Text>
                     </View>
                     <View style={{ flex: 1 }}>
                         {this.renderBtnCadastro()}
